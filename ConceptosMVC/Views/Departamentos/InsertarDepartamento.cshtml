@@ -1,0 +1,29 @@
+﻿@using ConceptosMVC.Models
+@model DEPT
+@{
+    ViewBag.Title = "InsertarDepartamento";
+}
+
+<h2>InsertarDepartamento</h2>
+@using (Html.BeginForm())
+{
+    Html.ValidationSummary(true);
+    <div>
+        @Html.LabelFor(z => z.DEPT_NO, new { @readonly = "readonly" })
+        @Html.EditorFor(z => z.DEPT_NO)
+    </div>
+    <div>
+        @Html.LabelFor(z => z.LOC)
+        @Html.EditorFor(z => z.LOC)
+        @Html.ValidationMessageFor(z => z.LOC)
+    </div>
+    <div>
+        @Html.LabelFor(z => z.DNOMBRE)
+        @Html.EditorFor(z => z.DNOMBRE)
+        @Html.ValidationMessageFor(z => z.DNOMBRE)
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success" id="botonenviar">Guardar datos</button>
+    </div>
+}
+
